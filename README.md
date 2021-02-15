@@ -12,7 +12,7 @@ Here are the projects within
 ## Global/Storage
 Just a simple example of a GCP Bucket
 
-## Environments/Dev/Services
+## Examples/Dev/Services
 Just a folder example to show people how to do environments by folder
 ### GCE
 Just a sample GCE instance running some basic stuff
