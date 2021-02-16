@@ -5,8 +5,6 @@ This is a sample repo to get people started with Terraform and GCP. Nothing too 
 
 Using Terraform 0.13 for this, so please double check you're on the same version if so.
 
-Feel free to reach out to me on twitter (https://www.twitter.com/DavidGulli)
-
 # Projects
 Here are the projects within
 ## Global/Storage
