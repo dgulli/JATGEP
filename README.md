@@ -21,5 +21,5 @@ The idea with this one is simple:
 1. Slack uses Oauth, so scrape a valid token by doing a dummy request and then look at the network traffic in the browser (thanks to https://stackoverflow.com/questions/54884815/obtain-slack-auth-token-for-terraform-google-monitoring-notification-channel-res) for that one. if there's a more elegant way of doing this let me know. 
 2. your build server (heaven forbid you use this in prod...) or laptop then uses that value to fill in the terraform token variable needed to run this.
 #### Requirements
-1. Needs a little bit of manual intervention to get the token, but then thats a one off. Store the token in your secrets manager (GCP secret manager!) or tfvars file. P
-2. You need to actually already have a workspace and project created like all other GCP automation things.
+1. Needs a little bit of manual intervention to get the token, but then thats a one off. Store the token in your secrets manager (GCP secret manager for a great native solution), Harshicorp Vault or tfvars file.
+2. You need to actually already have a workspace and project created like all other GCP automation things. This is due to the Operations Suite API not currently having a create workspace command just yet.
