@@ -1,0 +1,11 @@
+name: organizations/orgid/policies/run.allowedIngress
+spec:
+    rules:
+    - condition:
+        expression: resource.matchTag("orgid/Contraints-run.allowingress", "internal-and-cloud-load-balancing")
+      values:
+        allowedValues:
+        - is:internal-and-cloud-load-balancing
+    - values:
+        allowedValues:
+        - is:internal

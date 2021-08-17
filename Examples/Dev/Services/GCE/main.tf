@@ -1,6 +1,6 @@
 //Configure Provider
 provider "google" {
-    project = "terrraformpoc"
+    project = ""
     region = "us-central1"
     zone = "us-central1-c"
 }

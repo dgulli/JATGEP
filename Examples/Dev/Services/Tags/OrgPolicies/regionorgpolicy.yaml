@@ -1,0 +1,8 @@
+name: organizations/orgid/policies/gcp.resourceLocations
+spec:
+    rules:
+    - condition:
+        expression: resource.matchTag("orgid/location", "asia")
+      values:
+        allowedValues:
+        - in:asia-locations

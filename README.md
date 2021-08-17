@@ -12,6 +12,15 @@ Just a simple example of a GCP Bucket
 
 ## Examples/Dev/Services
 Just a folder example to show people how to do environments by folder
+### CAS
+Demonstrates how to use the new GCP CAS service by deploying a Root CA in Ubuntu and creating a sub-ca in CAS, complete with IAP for remote access via 3389 tunneling.  Variables.example provides a template to use for the variables.tf file. 
+
+CAsetup.sh will install all the required components to install a root standalone CA for testing.
+
+Alternatively, there's a pure cloud version that just uses CAS for the root and the sub CA
+
+## Tags
+Demo tf to demonstrate how to create tags and affect org policies with them. will require knowledge of the gcloud commands to apply org policies due to the terraform resource for org policies and conditions not being GA yet.
 ### GCE
 Just a sample GCE instance running some basic stuff
 ### Operations Suite Monitoring (Formally Stackdriver) and Notification Channels

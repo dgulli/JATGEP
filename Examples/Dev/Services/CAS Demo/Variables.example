@@ -1,0 +1,134 @@
+variable "project" {
+  description = "the unique name of the project"
+  default = "project-12345"
+}
+variable "region" {
+  description = "the region you want to deploy to.."
+  default = "australia-southeast1"
+}
+
+variable "zone" {
+  description = "the region you want to deploy to.."
+  default = "australia-southeast1-a"
+}
+#machine and vpc variables
+variable "machineType" {
+  description = "the machine type used to deploy a root CA"
+  default = "n2-standard-2"
+}
+variable "machineImage" {
+  description = "Latest stable windows 2k19 image"
+  default = "windows-cloud/windows-server-2019-dc-v20210713"
+}
+variable "vpc-name" {
+  description = "the name of the vpc for the Root CA"
+  default = "cas-network"
+}
+variable "subnet-name" {
+  description = "the name of the subnet for the root ca"
+  default = "test-subnetwork"
+}
+variable "subnet-CIDR" {
+  description = "the cidr for the root ca"
+  default = "10.2.0.0/16"
+}
+variable "machineName" {
+  description = "the root ca's name"
+  default = "rootca"
+}
+variable "machineScript" {
+  description = "the powershell script to run installing a standalone root CA"
+  default = "casetup.ps1"
+}
+
+variable "machineSerialPortEnabled" {
+  description = "turn the serial port on and off for debugging"
+  default = "TRUE"
+}
+#firewall variables
+variable "firewallRuleIAPName" {
+  description = "the root CA has no external ip. iap is needed, this gives a firewall rule a name"
+  default = "allow-rdp-iap"
+}
+variable "firewallSourceRanges" {
+ description = "the gcp IAP range"
+  default = ["35.235.240.0/20"]
+}
+variable "firewallProtocol" {
+  description = "the protocol value"
+  default = "tcp"
+}
+variable "firewallPorts" {
+  description = "ports needed - 3389, 22, and 5901"
+  default = ["3389", "22", "5901"]
+}
+#IAP IAM
+variable "iapRole" {
+  description = "the iap role"
+  default = "roles/iap.tunnelResourceAccessor"
+}
+variable "iapMembers" {
+  description = "the collaborators for iap"
+  default = ["user:ldap@google.com", "user:ldap2@google.com"]
+}
+#cas stuff
+variable "caPoolName" {
+  description = "the name of the required CA pool"
+  default = "CApool"
+}
+variable "caTier" {
+  description = "what tier is the ca.."
+  default = "ENTERPRISE"
+}
+variable "caId" {
+  description = "the unique id"
+  default = "subca"
+}
+#cert stuff
+variable "subjectOrg" {
+  description = "cert subject topic - org!"
+  default = "Example Pty LTd"
+}
+variable "subjectCn" {
+  description = "cert subject topic - Common Name"
+  default = "gcp.example.com"
+}
+variable "subjectCc" {
+  description = "cert subject topic - Country Code"
+  default = "AU"
+}
+variable "subjectOu" {
+  description = "cert subject topic - Org unit"
+  default = "GCP"
+}
+variable "subjectProvince" {
+  description = "cert subject topic - State"
+  default = "VIC"
+}
+variable "subjectLocality" {
+  description = "cert subject topic - City"
+  default = "Melbourne"
+}
+
+#KMS stuff
+variable "kmsKeyRingName" {
+  description = "Name of Keyring"
+  default = "KeyRing"
+}
+variable "kmsKeyName" {
+  description = "Name of the key"
+  default = "KeyHsm"
+}
+
+variable "kmsKeyPurpose" {
+  description = "asymmetric or symmetric?"
+  default = "ASYMMETRIC_SIGN"
+}
+variable "kmsKeyAlgo" {
+  description = "what algo are you using"
+  default = "RSA_SIGN_PSS_3072_SHA256"
+}
+variable "kmsKeyLifeCycle" {
+  description = "protect me from deletion or nah"
+  default = true
+}

@@ -1,0 +1,9 @@
+name: organizations/orgID/policies/iam.allowedPolicyMemberDomains
+spec:
+    rules:
+    - condition:
+        expression: resource.matchTag("orgID/Contraints-iam.allowedPolicyMemberDomains", "enforced")
+      values:
+        allowedValues:
+        - is:C00a1a1ab #WorkspaceID domain 1
+        - is:C00a1a1aa #WorkspaceID domain 2enfor
