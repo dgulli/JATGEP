@@ -1,0 +1,81 @@
+variable "project" {
+  description = "the unique name of the project"
+  default     = "projectid1233-4"
+}
+variable "region" {
+  description = "the region you want to deploy to.."
+  default     = "australia-southeast1"
+}
+variable "zone" {
+  description = "the region you want to deploy to.."
+  default     = "australia-southeast1-a"
+}
+#cas stuff
+variable "caPoolName" {
+  description = "the name of the required CA pool"
+  default     = "DGDemoPool"
+}
+variable "caTier" {
+  description = "what tier is the ca.."
+  default     = "ENTERPRISE"
+}
+variable "caId" {
+  description = "the unique id"
+  default     = "DGDemoRootCA"
+}
+variable "subCaId" {
+  description = "the unique id"
+  default     = "DGDemoSubCA"
+}
+variable "caType" {
+  description = "what type of CA am i?"
+  default     = "SUBORDINATE"
+}
+#cert stuff
+variable "subjectOrg" {
+  description = "cert subject topic - org!"
+  default     = "BearPug Industries Pty"
+}
+variable "subjectCn" {
+  description = "cert subject topic - Common Name"
+  default     = "gcp.bearpug.io"
+}
+variable "subjectCc" {
+  description = "cert subject topic - Country Code"
+  default     = "AU"
+}
+variable "subjectOu" {
+  description = "cert subject topic - Org unit"
+  default     = "GCP"
+}
+variable "subjectProvince" {
+  description = "cert subject topic - State"
+  default     = "VIC"
+}
+variable "subjectLocality" {
+  description = "cert subject topic - City"
+  default     = "Melbourne"
+}
+
+#KMS stuff
+variable "kmsKeyRingName" {
+  description = "Name of Keyring"
+  default     = "Demo_KeyRing"
+}
+variable "kmsKeyName" {
+  description = "Name of the key"
+  default     = "Demo"
+}
+
+variable "kmsKeyPurpose" {
+  description = "asymmetric or symmetric?"
+  default     = "ASYMMETRIC_SIGN"
+}
+variable "kmsKeyAlgo" {
+  description = "what algo are you using"
+  default     = "RSA_SIGN_PSS_3072_SHA256"
+}
+variable "kmsKeyLifeCycle" {
+  description = "protect me from deletion or nah"
+  default     = true
+}
