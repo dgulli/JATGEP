@@ -100,7 +100,7 @@ resource "google_privateca_certificate_authority" "subca" {
     x509_config {
       ca_options {
         is_ca                  = true
-        max_issuer_path_length = 10
+        max_issuer_path_length = 0
       }
       key_usage {
         base_key_usage {
