@@ -8,8 +8,18 @@ provider "google" {
 }
 #GCP CAS
 
-## CA pool
+## Root CA pool
 resource "google_privateca_ca_pool" "ca_pool" {
+  name     = var.caPoolName
+  location = var.region
+  tier     = var.caTier
+  publishing_options {
+    publish_ca_cert = true
+    publish_crl     = true
+  }
+}
+## Subordinate CA pool
+resource "google_privateca_ca_pool" "subca_pool" {
   name     = var.caPoolName
   location = var.region
   tier     = var.caTier
@@ -84,7 +94,7 @@ resource "google_privateca_certificate_authority" "rootca" {
 resource "google_privateca_certificate_authority" "subca" {
   location                 = var.region
   certificate_authority_id = var.subCaId
-  pool                     = google_privateca_ca_pool.ca_pool.name
+  pool                     = google_privateca_ca_pool.subca_pool.name
   type                     = var.caType
   config {
     x509_config {
