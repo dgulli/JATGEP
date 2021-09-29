@@ -20,7 +20,7 @@ resource "google_privateca_ca_pool" "ca_pool" {
 }
 ## Subordinate CA pool
 resource "google_privateca_ca_pool" "subca_pool" {
-  name     = var.caPoolName
+  name     = var.subcaPoolName
   location = var.region
   tier     = var.caTier
   publishing_options {
